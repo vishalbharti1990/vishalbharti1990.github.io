@@ -357,13 +357,34 @@
             lucide.createIcons();
         });
 
-        // Skill bar animation on load
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.heatmap-tile').forEach((tile, i) => {
+        // Animate skill bars when skills section enters viewport
+        const skillSection = document.getElementById('skills');
+        const skillTiles = document.querySelectorAll('.heatmap-tile');
+        let skillAnimationPlayed = false;
+
+        const playSkillAnimation = () => {
+            skillTiles.forEach((tile, i) => {
                 tile.style.animationDelay = `${i * 70}ms`;
                 tile.classList.add('animate');
             });
-        });
+        };
+
+        if ('IntersectionObserver' in window && skillSection) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !skillAnimationPlayed) {
+                        playSkillAnimation();
+                        skillAnimationPlayed = true;
+                        obs.unobserve(skillSection);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            observer.observe(skillSection);
+        } else {
+            // Fallback for legacy browsers
+            window.addEventListener('load', playSkillAnimation);
+        }
     </script>
 </body>
 </html>
