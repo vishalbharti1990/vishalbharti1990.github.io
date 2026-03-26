@@ -31,6 +31,11 @@
         .heatmap-tile.animate { animation: fillBar 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
         .heatmap-tile:hover { transform: scaleY(1.3); }
         @keyframes fillBar { to { transform: scaleY(1); opacity: 1; } }
+
+        /* New bar-based skill output */
+        .skill-bar { width: 100%; max-width: 240px; height: 12px; border-radius: 999px; background: rgba(148, 163, 184, 0.25); overflow: hidden; margin-top: 6px; }
+        .skill-bar-fill { height: 100%; width: 0%; border-radius: 999px; background: linear-gradient(90deg, #38bdf8, #2563eb); transition: width 0.8s ease; }
+        .skill-bar-fill.animate { width: var(--target-fill, 100%); }
         .heat-1 { background: linear-gradient(to bottom, #3b82f6, #2563eb); }
         .heat-2 { background: linear-gradient(to bottom, #06b6d4, #0891b2); }
         .heat-3 { background: linear-gradient(to bottom, #10b981, #059669); }
@@ -357,17 +362,39 @@
             lucide.createIcons();
         });
 
-        // Animate skill bars when skills section enters viewport
+        // Convert tile-based heatmaps into single bar-based skill elements
+        const convertHeatmapToBar = () => {
+            document.querySelectorAll('.skill-heatmap').forEach(container => {
+                const tiles = Array.from(container.querySelectorAll('.heatmap-tile'));
+                if (!tiles.length) return;
+
+                const levelClass = tiles[0].className.split(' ').find(c => c.startsWith('heat-')) || 'heat-5';
+                const level = Number(levelClass.split('-')[1] || 5);
+                const fillPercent = Math.round(Math.max(0, Math.min(5, level)) / 5 * 100);
+
+                const bar = document.createElement('div');
+                bar.className = 'skill-bar';
+                const fill = document.createElement('div');
+                fill.className = 'skill-bar-fill';
+                fill.style.setProperty('--target-fill', `${fillPercent}%`);
+                bar.append(fill);
+
+                container.replaceWith(bar);
+            });
+        };
+
+        // Animate bar fills when skills section enters viewport
         const skillSection = document.getElementById('skills');
-        const skillTiles = document.querySelectorAll('.heatmap-tile');
         let skillAnimationPlayed = false;
 
         const playSkillAnimation = () => {
-            skillTiles.forEach((tile, i) => {
-                tile.style.animationDelay = `${i * 70}ms`;
-                tile.classList.add('animate');
+            document.querySelectorAll('.skill-bar-fill').forEach((fill, i) => {
+                fill.style.transitionDelay = `${i * 70}ms`;
+                fill.classList.add('animate');
             });
         };
+
+        convertHeatmapToBar();
 
         if ('IntersectionObserver' in window && skillSection) {
             const observer = new IntersectionObserver((entries, obs) => {
