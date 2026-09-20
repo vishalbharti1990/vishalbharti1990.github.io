@@ -31,7 +31,6 @@
         .heatmap-tile.animate { animation: fillBar 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
         .heatmap-tile:hover { transform: scaleY(1.3); }
         @keyframes fillBar { to { transform: scaleY(1); opacity: 1; } }
-
         /* New bar-based skill output */
         .skill-bar { width: 100%; max-width: 240px; height: 12px; border-radius: 999px; background: rgba(148, 163, 184, 0.25); overflow: hidden; margin-top: 6px; }
         .skill-bar-fill { height: 100%; width: 0%; border-radius: 999px; background: linear-gradient(90deg, #38bdf8, #2563eb); transition: width 0.8s ease; }
@@ -44,15 +43,15 @@
         .theme-toggle { cursor: pointer; padding: 8px; border-radius: 8px; transition: all 0.3s; }
         .theme-toggle:hover { background: rgba(37, 99, 235, 0.1); }
         .dark .theme-toggle:hover { background: rgba(59, 130, 246, 0.1); }
-
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
-
     <nav class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-700">
         <div class="glass max-w-full">
             <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-                <span class="font-bold text-xl tracking-tighter text-slate-900 dark:text-slate-100">VISHAL<span class="text-blue-600 dark:text-blue-400">.</span>BHARTI</span>
+                <div class="flex items-center gap-3">
+                    <span class="font-bold text-xl tracking-tighter text-slate-900 dark:text-slate-100">VISHAL<span class="text-blue-600 dark:text-blue-400">.</span>BHARTI</span>
+                </div>
                 <div class="flex items-center gap-8">
                     <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600 dark:text-slate-200">
                         <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-300 transition">About</a>
@@ -68,40 +67,14 @@
             </div>
         </div>
     </nav>
-
     <section id="about" class="pt-20 pb-32 px-6 transition-colors duration-300 bg-gradient-to-br from-indigo-100 via-slate-50 to-slate-100 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <div class="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-700 px-3 py-1 rounded-full text-blue-700 dark:text-blue-300 text-xs font-bold">
-                        <i data-lucide="award" class="w-3 h-3"></i> AWS CERTIFIED DATA ENGINEER ASSOCIATE
-                    </div>
-                    <div class="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-700 px-3 py-1 rounded-full text-blue-700 dark:text-blue-300 text-xs font-bold">
-                        <i data-lucide="award" class="w-3 h-3"></i> AWS CERTIFIED GEN AI PROFESSIONAL
-                    </div>
-                </div>
-
-                <div class="flex flex-col lg:flex-row gap-4 mb-8">
-                    <a href="https://aws.amazon.com/certification/certified-data-engineer-associate/" target="_blank" rel="noreferrer" class="group flex flex-1 items-center gap-4 rounded-[22px] border border-blue-300 bg-white/80 p-3 shadow-sm transition hover:shadow-md">
-                        <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/dea-badge-resized.8d43ca153957a86dc8505f0887e4c220b774093e.png" alt="AWS Certified Data Engineer Associate badge" class="h-24 w-24 object-contain rounded-lg" />
-                        <div class="min-w-0 text-left">
-                            <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500">Official AWS</div>
-                            <div class="text-lg md:text-xl font-black leading-none tracking-[-0.04em] text-slate-800">Data Engineer Associate</div>
-                        </div>
-                    </a>
-                    <a href="https://aws.amazon.com/certification/certified-generative-ai-specialty/" target="_blank" rel="noreferrer" class="group flex flex-1 items-center gap-4 rounded-[22px] border border-blue-300 bg-white/80 p-3 shadow-sm transition hover:shadow-md">
-                        <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/certification/approved/images/certification-badges/gdp-badge-resized.47935d14ac5f17a133aaca74d3bdd7b8d2c02023.png" alt="AWS Certified GenAI Professional badge" class="h-24 w-24 object-contain rounded-lg" />
-                        <div class="min-w-0 text-left">
-                            <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500">Official AWS</div>
-                            <div class="text-lg md:text-xl font-black leading-none tracking-[-0.04em] text-slate-800">GenAI Professional</div>
-                        </div>
-                    </a>
-                </div>
                 <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-slate-900 dark:text-slate-100">
                     Driving <span class="text-blue-600 dark:text-blue-400">Efficiency</span> Through AI.
                 </h1>
                 <p class="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-                    AWS Certified Data Engineer Associate and AWS Certified Gen AI Professional with 9+ years of expertise in cloud migrations, API modernization, and ML infrastructure. I transform legacy systems into scalable, cost-efficient solutions using Python, AWS, and Gen AI tools.
+                    AWS Certified Data Engineer Associate and AWS Certified Generative AI Developer - Professional with 9+ years of expertise in cloud migrations, API modernization, and ML infrastructure. I transform legacy systems into scalable, cost-efficient solutions using Python, AWS, and Gen AI tools.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="https://linkedin.com/in/vishal-bharti-301349216" class="bg-slate-900 dark:bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 dark:hover:bg-blue-700 transition shadow-lg shadow-slate-200 dark:shadow-blue-900/50 flex items-center gap-2">
@@ -128,18 +101,35 @@
                         <p class="text-sm text-slate-500 dark:text-slate-400">Performance Gain</p>
                     </div>
                     <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
-                        <h3 class="font-bold text-2xl text-blue-600 dark:text-blue-400">AWS</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400">Data Engineer Associate + GenAI Professional</p>
+                        <h3 class="font-bold text-2xl text-blue-600 dark:text-blue-400">2</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">AWS Certifications</p>
+                    </div>
+                </div>
+                <div class="p-4 bg-white/70 dark:bg-slate-800/70 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <p class="mb-3 text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Verified AWS credentials</p>
+                    <div class="grid sm:grid-cols-2 gap-3">
+                        <a href="https://www.credly.com/badges/3c32b3ea-92f3-44ec-860e-0173048c716d/public_url" target="_blank" rel="noopener noreferrer" aria-label="View AWS Certified Generative AI Developer Professional credential" class="group flex items-center gap-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/60 p-3 transition hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md">
+                            <img src="images/gen-ai-developer-professional.png" alt="AWS Certified Generative AI Developer Professional badge" class="h-12 w-12 shrink-0 object-contain scale-[2] transition-transform group-hover:scale-[2.3]">
+                            <span class="min-w-0">
+                                <span class="block text-sm font-bold leading-tight text-slate-800 dark:text-slate-100">Generative AI Developer</span>
+                                <span class="block mt-1 text-xs text-slate-500 dark:text-slate-400">Professional · View credential</span>
+                            </span>
+                        </a>
+                        <a href="https://www.credly.com/badges/c6d10599-86fe-4824-98cf-7d9f1d9a3ae9/public_url" target="_blank" rel="noopener noreferrer" aria-label="View AWS Certified Data Engineer Associate credential" class="group flex items-center gap-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/60 p-3 transition hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md">
+                            <img src="images/data-engineer-associate.png" alt="AWS Certified Data Engineer Associate badge" class="h-12 w-12 shrink-0 object-contain scale-[2] transition-transform group-hover:scale-[2.3]">
+                            <span class="min-w-0">
+                                <span class="block text-sm font-bold leading-tight text-slate-800 dark:text-slate-100">Data Engineer</span>
+                                <span class="block mt-1 text-xs text-slate-500 dark:text-slate-400">Associate · View credential</span>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="experience" class="py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-slate-900 dark:text-slate-100">Professional Impact & Innovation</h2>
-            
             <div class="space-y-12">
                 <div class="relative pl-8 border-l-2 border-slate-200 dark:border-slate-700">
                     <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-200 dark:bg-slate-700 rounded-full border-4 border-white dark:border-slate-800"></div>
@@ -151,7 +141,6 @@
                             </div>
                             <span class="text-xs font-bold text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/30 px-2 py-1 rounded">ACTIVE INNOVATION</span>
                         </div>
-                        
                         <div class="space-y-6 text-sm text-slate-600 dark:text-slate-300">
                             <div>
                                 <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
@@ -159,21 +148,18 @@
                                 </h4>
                                 <p>Architected an automated migration flow using <strong>GitHub Copilot</strong> to transform legacy Perl and Shell scripts into Python. Utilized iterative prompt engineering to ensure exact functional parity, significantly accelerating technical debt reduction.</p>
                             </div>
-
                             <div>
                                 <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
                                     <i data-lucide="trending-up" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i>Data Optimization (Phase 1)
                                 </h4>
                                 <p>Optimized data processing pipelines by migrating from Pandas to <strong>Polars</strong>, resulting in a <strong>70% performance increase</strong> and achieving <strong>$200K in annual cost savings</strong>.</p>
                             </div>
-
                             <div>
                                 <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
                                     <i data-lucide="zap" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i> AI-Driven Development
                                 </h4>
                                 <p>Leading the migration from Aurora to <strong>DynamoDB</strong> to reduce database costs by <strong>50%</strong>. Leveraging Gen AI for accelerated cost estimation, RDBMS-to-NoSQL design patterns, and table merging strategies (#META).</p>
                             </div>
-
                             <div>
                                 <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
                                     <i data-lucide="layers" class="w-4 h-4 text-blue-600 dark:text-blue-400"></i> Architectural Modernization
@@ -183,7 +169,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="relative pl-8 border-l-2 border-slate-200 dark:border-slate-700">
                     <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-200 dark:bg-slate-700 rounded-full border-4 border-white dark:border-slate-800"></div>
                     <h3 class="text-lg font-bold text-slate-800 dark:text-slate-200">Python AWS Developer (Contractor)</h3>
@@ -193,7 +178,6 @@
             </div>
         </div>
     </section>
-
     <section id="skills" class="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12 text-center text-slate-900 dark:text-slate-100">Technical Ecosystem</h2>
@@ -241,7 +225,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="skill-card bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 transition">
                     <h4 class="font-bold text-sm text-blue-600 dark:text-blue-400 uppercase mb-6 flex items-center gap-2">
                         <i data-lucide="database" class="w-4 h-4"></i> Data Engineering
@@ -285,7 +268,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="skill-card bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 transition">
                     <h4 class="font-bold text-sm text-blue-600 dark:text-blue-400 uppercase mb-6 flex items-center gap-2">
                         <i data-lucide="cloud" class="w-4 h-4"></i> Cloud & DevOps
@@ -332,14 +314,13 @@
             </div>
         </div>
     </section>
-
     <section id="education" class="py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
         <div class="max-w-4xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-16 text-center text-slate-900 dark:text-slate-100">Education & Research</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 dark:from-blue-900 dark:to-slate-900 text-white shadow-lg">
                     <h3 class="text-xl font-bold mb-2">PhD in Computer Science</h3>
-                    <p class="text-blue-300 dark:text-blue-300 mb-4 text-sm uppercase font-bold tracking-widest">CUNY Graduate Center | Expected 2025</p>
+                    <p class="text-blue-300 dark:text-blue-300 mb-4 text-sm uppercase font-bold tracking-widest">CUNY Graduate Center | Expected 2027</p>
                     <p class="text-slate-300 dark:text-slate-400 text-sm leading-relaxed">
                         Advanced to candidacy; working on dissertation proposal. Researching <strong>Deep Subspace Clustering</strong> under Prof. Robert Haralick. Recipient of tuition fellowship ($15K annual stipend).
                     </p>
@@ -354,7 +335,6 @@
             </div>
         </div>
     </section>
-
     <footer class="py-20 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-center text-sm text-slate-500 dark:text-slate-400 transition-colors duration-300">
         <div class="flex justify-center gap-4 mb-8">
             <a href="mailto:vrbharti1990@gmail.com" class="bg-slate-900 dark:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-slate-800 dark:hover:bg-blue-700 transition flex items-center gap-2 text-sm">
@@ -369,15 +349,12 @@
         </div>
         <p>© 2026 Vishal Bharti • Software Developer & PhD Candidate</p>
     </footer>
-
     <script>
         lucide.createIcons();
-        
         // Dark mode toggle
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         const html = document.documentElement;
-        
         // Check for saved theme preference or default to 'light'
         const currentTheme = localStorage.getItem('theme') || 'light';
         if (currentTheme === 'dark') {
@@ -385,7 +362,6 @@
             themeIcon.setAttribute('data-lucide', 'sun');
             lucide.createIcons();
         }
-        
         themeToggle.addEventListener('click', () => {
             html.classList.toggle('dark');
             const isDark = html.classList.contains('dark');
@@ -399,35 +375,28 @@
             document.querySelectorAll('.skill-heatmap').forEach(container => {
                 const tiles = Array.from(container.querySelectorAll('.heatmap-tile'));
                 if (!tiles.length) return;
-
                 const levelClass = tiles[0].className.split(' ').find(c => c.startsWith('heat-')) || 'heat-5';
                 const level = Number(levelClass.split('-')[1] || 5);
                 const fillPercent = Math.round(Math.max(0, Math.min(5, level)) / 5 * 100);
-
                 const bar = document.createElement('div');
                 bar.className = 'skill-bar';
                 const fill = document.createElement('div');
                 fill.className = 'skill-bar-fill';
                 fill.style.setProperty('--target-fill', `${fillPercent}%`);
                 bar.append(fill);
-
                 container.replaceWith(bar);
             });
         };
-
         // Animate bar fills when skills section enters viewport
         const skillSection = document.getElementById('skills');
         let skillAnimationPlayed = false;
-
         const playSkillAnimation = () => {
             document.querySelectorAll('.skill-bar-fill').forEach((fill, i) => {
                 fill.style.transitionDelay = `${i * 70}ms`;
                 fill.classList.add('animate');
             });
         };
-
         convertHeatmapToBar();
-
         if ('IntersectionObserver' in window && skillSection) {
             const observer = new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
@@ -438,7 +407,6 @@
                     }
                 });
             }, { threshold: 0.2 });
-
             observer.observe(skillSection);
         } else {
             // Fallback for legacy browsers
